@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body style="background-color: rgb(42, 42, 42); color: white;">
+  <input type="text" placeholder="first number"> <br>
+  <input type="text" placeholder="second number"> <br>
+  <button onclick=sum()>calculate sum</button> <br> <br>
+  <div id="finalSum" ></div>
+
+  <script>
+    function sum() {
+      let firstNumber = document.querySelector('input[placeholder="first number"]').value;
+      let secondNumber = document.querySelector('input[placeholder="second number"]').value;
+      let sum = parseInt(firstNumber) + parseInt(secondNumber);
+      document.getElementById('finalSum').innerHTML = sum;
+
+
+      fetch("https://sum-server.100devs.com/sum?a=" + firstNumber + "&b=" + secondNumber)
+        .then(function(response) {
+          console.log(response);
+          response.text().then(function(text) {
+            console.log(text);
+          })
+        })
+    }
+  </script>
+</body> 
+</html>
