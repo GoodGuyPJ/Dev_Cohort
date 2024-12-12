@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo</title>
+</head>
+<body style="background-color: rgb(81, 81, 81);">
+  <script>
+    function addTodo() {
+      const title = document.querySelector('input[placeholder="title"]').value;
+      const description = document.querySelector('input[placeholder="description"]').value;
+      // console.log(title, description);
+
+      const originalHtml = document.getElementById("container").innerHTML;
+      document.getElementById("container").innerHTML = originalHtml + `
+        <div style="background-color: white; padding: 10px; margin: 10px;">
+          <h3>${title}</h3>
+          <p>${description}</p>
+          <button>Delete</button>
+        </div>
+      `;
+
+      //The above code is ugly way to add the todo. we can use document.createElement() to create the element and append it to the container.
+
+      const outerDiv = document.createElement("div");
+      outerDiv.innerHTML = title;
+      document.getElementById("container").appendChild(outerDiv);
+
+
+    }
+  </script>
+  
+  <div>
+    <input type="text" placeholder="title" /> <br> <br>
+    <input type="text" placeholder="description" /> <br> <br>
+    <button onclick="addTodo()">Add todo</button>
+     
+  </div>
+
+  <div id="container"></div>
+</body>
+</html>
+
+
+
+
+<!-- ******************************************************** -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script>
+    let globalId = 1;
+
+    function markAsDone(todoId) {
+      const parent = document.getElementById(todoId);
+      parent.children[2].innerHTML = "Done!"
+    }
+
+    function createChild(title, description, id) {
+      const child = document.createElement("div");
+      const firstGrandParent = document.createElement("div");
+      firstGrandParent.innerHTML = title;
+      const secondGrandParent = document.createElement("div");
+      secondGrandParent.innerHTML = description;
+      const thirdGrandParent = document.createElement("button");
+      thirdGrandParent.innerHTML = "Mark as done";
+      thirdGrandParent.setAttribute("onclick", `markAsDone(${id})`);
+      child.appendChild(firstGrandParent);
+      child.appendChild(secondGrandParent);
+      child.appendChild(thirdGrandParent)
+      child.setAttribute("id", id);
+      return child;
+    }
+    function addTodo() {
+      const title = document.getElementById("title").value;
+      const description = document.getElementById("description").value;
+      const parent = document.getElementById("todos");
+
+      parent.appendChild(createChild(title, description, globalId++));
+    }
+  </script>
+</head>
+
+<body>
+  <input type="text" id="title" placeholder="Todo title"></input> <br /><br />
+  <input type="text" id="description" placeholder="Todo description"></input> <br /><br />
+  <button onclick="addTodo()">Add todo</button>
+
+  <div id="todos">
+
+  </div>
+</body>
+
+</html>
