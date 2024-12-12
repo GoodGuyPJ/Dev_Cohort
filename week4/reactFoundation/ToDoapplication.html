@@ -14,18 +14,19 @@
 
       const originalHtml = document.getElementById("container").innerHTML;
       document.getElementById("container").innerHTML = originalHtml + `
-        <div style="background-color: white; padding: 10px; margin: 10px;">
+        <div style="background-color: white; padding: 10px; margin: 10px; width = 50%;">
           <h3>${title}</h3>
           <p>${description}</p>
           <button>Delete</button>
         </div>
       `;
-
+ 
       //The above code is ugly way to add the todo. we can use document.createElement() to create the element and append it to the container.
 
       const outerDiv = document.createElement("div");
       outerDiv.innerHTML = title;
       document.getElementById("container").appendChild(outerDiv);
+      
 
 
     }
