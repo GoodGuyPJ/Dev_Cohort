@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const secret = require('../index');
+const JWT_SECRET = require('../config');
 
 function userMiddleware(req, res, next) {
     // Implement user auth logic
@@ -8,8 +8,8 @@ function userMiddleware(req, res, next) {
     //Bearer token
     const words = token.split(" ");
     const jwtToken = words[1];
-    const decodedValue = jwt.verify(jwtToken, secret);
-    //username, type: "admin" | "user"
+    const decodedValue = jwt.verify(jwtToken, JWT_SECRET);
+    //username, type: "admin" | "user" --> diffrence b/w authentication and authorization
     if (decodedValue.username){
         next();
     } else {
