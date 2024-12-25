@@ -1,14 +1,20 @@
 const express = require('express');
-const { createTodo } = require('./types');
-const { todo } = require('./db');
 const app = express();
+const cors = require('cors');
+
+const { todo } = require('./db');
+const { createTodo, updateTodo } = require('./types');
 
 app.use(express.json());
+app.use(cors());
+// app.use(cors({
+//   origin: 'http://localhost:5173',
+// }));
 
-//body {
+/*body {
   // title: string;
   // description: string;
-//}
+} */
 
 app.post("/todo", async function(req, res) {
     const createPayload = req.body;
@@ -20,20 +26,21 @@ app.post("/todo", async function(req, res) {
       return;
     }
     //put it in mongoDB
-    await todo.create({
+    const newTodo = await todo.create({
       title: createPayload.title,
       description: createPayload.description,
       completed: false,
      })
      res.json({
         msg: "Todo created",
+        todo: newTodo,
      })
 });
 
 app.get("/todos", async function(req, res) { 
     const todos = await todo.find({});
     res.json({
-      todos,
+      todos : todos,
     })
 });
 
