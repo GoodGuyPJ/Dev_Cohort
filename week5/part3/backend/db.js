@@ -9,7 +9,7 @@ const mongoose = require('mongoose');
 
 // Connect to MongoDB
 
-mongoose.connect('mongodb_url');
+mongoose.connect('mongodb_urlS');
 
 const todoSchema = new mongoose.Schema({
   title: String,
