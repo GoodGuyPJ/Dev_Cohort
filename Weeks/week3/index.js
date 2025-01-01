@@ -6,9 +6,9 @@ const app = express();
 
 const ALL_USERS = [
   {
-    username: "harkirat@gmail.com",
+    username: "CodeWithme@gmail.com",
     password: "123",
-    name: "harkirat singh",
+    name: "Mahuwa singh",
   },
   {
     username: "raman@gmail.com",
