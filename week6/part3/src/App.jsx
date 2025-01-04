@@ -5,15 +5,15 @@ import axios from "axios";
 function App() {
   const [todos, setTodos] = useState([]);
 
-  // useEffect(() => {
-  //   axios.get("http://localhost:8000/todos").then(function (res) {
-  //     setTodos(res.data.todos);
-  //   });
-  // }, []);
+  useEffect(() => {
+    axios.get("http://localhost:8000/todos").then(function (res) {
+      setTodos(res.data.todos);
+    });
+  }, []);
 
   //to show id title and description using useEffect
   useEffect(() => {
-    axios.get(`http://localhost:8000/todo?id=${id}`).then(function (res) {
+    axios.get(`http://localhost:8000/todo?id={$id}`).then(function (res) {
       console.log(res.data.todo);
       setTodos(res.data.todo);
     });
