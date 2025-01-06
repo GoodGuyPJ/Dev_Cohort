@@ -66,12 +66,12 @@ function Todo({ id }) {
 
   //Problem to solve
   //we cannot use async function in useEffect
-  // useEffect(() => {
-  //   axios.get(`http://localhost:8000/todo?id=${id}`).then((res) => {
-  //     console.log(res.data.todo);
-  //     setTodo(res.data.todo);
-  //   });
-  // }, [id]);
+  useEffect(() => {
+    axios.get(`http://localhost:8000/todo?id=${id}`).then((res) => {
+      console.log(res.data.todo);
+      setTodo(res.data.todo);
+    });
+  }, [id]);
 
   //using setTimout to show the id
   useEffect(() => {
