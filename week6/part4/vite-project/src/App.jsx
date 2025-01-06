@@ -1,4 +1,6 @@
+//Approcah 1: Using useMemo
 import React, { useEffect, useMemo, useState } from "react";
+import { use } from "react";
 /**
    Create an app that does two things:
    1. Increase a counter by 1
@@ -9,28 +11,38 @@ import React, { useEffect, useMemo, useState } from "react";
 function App() {
   const [counter, setCounter] = useState(0);
   const [inputValue, setInputValue] = useState(1);
-  const [finalValue, setFinalValue] = useState(0);
+  const [count, setCount] = useState(0);
 
-  useEffect(() => {
-    let count = 0;
-    for (let i = 1; i <= inputValue; i++) {
-      count = count + i;
-    }
-    setFinalValue(count);
-  }, [inputValue]);
+  // useEffect(() => {
+  //   let count = 0;
+  //   for (let i = 1; i <= inputValue; i++) {
+  //     count = count + i;
+  //   }
+  //   setFinalValue(count);
+  // }, [inputValue]);
 
+  /*useMemo
   let count = useMemo(() => {
     let count = 0;
     for (let i = 1; i <= inputValue; i++) {
       count += i;
     }
     return count;
-  }, [inputValue]);
+  }, [inputValue]);*/
 
   // let count = 0;
   // for (let i = 1; i <= inputValue; i++) {
   //   count += i;
   // }
+
+  //Approch 2
+  useEffect(() => {
+    let finalCount = 0;
+    for (let i = 1; i <= inputValue; i++) {
+      finalCount = finalCount + i;
+    }
+    setCount(finalCount);
+  }, [inputValue]);
 
   return (
     <div>
