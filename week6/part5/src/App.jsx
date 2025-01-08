@@ -2,21 +2,20 @@ import { useState } from "react";
 import axios from "axios";
 import { useEffect } from "react";
 
-function useTodos() {
-  const [todos, setTodos] = useState([]);
-
-  useEffect(() => {
-    axios.get().then((res) => {
-      setTodos(res.data);
-    }, []);
-  });
-  return todos;
-}
-
 function App() {
-  const todos = useTodos();
+  const [count, setCount] = useState(0);
 
-  return <div>{todos}</div>;
+  return (
+    <>
+      <button
+        onClick={function () {
+          setCount(count + 1);
+        }}
+      >
+        Count is {count}
+      </button>
+    </>
+  );
 }
 
 export default App;
