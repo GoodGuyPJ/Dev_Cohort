@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import axios from "axios";
 import { useEffect } from "react";
 
@@ -27,19 +27,19 @@ function App() {
     }, 5000);
   }, []);
 
-  const cryptoReturns = exchange1Data.returns + exchange2Data.returns;
+  console.log("hi from App");
+  // const cryptoReturns = exchange1Data.returns + exchange2Data.returns;
 
+  const cryptoReturns = useMemo(() => {
+    return exchange1Data.returns + exchange2Data.returns;
+  }, [exchange1Data, exchange2Data]);
+
+  console.log("cryptoReturns", cryptoReturns);
   const incomeTax = (bankData.income + cryptoReturns) * 0.3;
 
   return (
     <div>
-      <h1>Bank</h1>
-      <p>Income: {bankData.income}</p>
       <p>Income tax: {incomeTax}</p>
-      <h1>Exchange 1</h1>
-      <p>Exchange 1 returns: {exchange1Data.returns}</p>
-      <h1>Exchange 2</h1>
-      <p>Exchange 2 returns: {exchange2Data.returns}</p>
     </div>
   );
 }
