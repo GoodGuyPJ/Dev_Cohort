@@ -1,5 +1,6 @@
 import React, { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
+// Lazy loading is a technique in React that allows you to load components only when they are needed. This can help reduce the size of your bundle and improve the performance of your app.
 const Landing = lazy(() => import("./components/Landing"));
 const Dashboard = lazy(() => import("./components/Dashboard"));
 // import Dashboard from React.lazy(() => import("./components/Dashboard"));
@@ -15,6 +16,8 @@ function App() {
         <Routes>
           {/* <Route path="dashboard" element={<Dashboard />} />
           <Route path="/" element={<Landing />} /> */}
+
+          {/* //Suspense Api asynchronous component featching,  asynchronous data fetching */}
           <Route
             path="dashboard"
             element={
