@@ -18,6 +18,7 @@ function App() {
           <Route path="/" element={<Landing />} /> */}
 
           {/* //Suspense Api asynchronous component featching,  asynchronous data fetching */}
+          {/* suspense api - is a component that you can use to wrap around the components that are being lazy loaded. It will show a fallback UI until the lazy loaded component is loaded. */}
           <Route
             path="dashboard"
             element={
