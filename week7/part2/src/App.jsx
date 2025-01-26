@@ -57,3 +57,5 @@ function Buttons({ setCount }) {
 export default App;
 
 // reducer/usereducer
+
+// context api is a great way to avoid prop drilling and share data between components without having to pass props through every level of the tree.
