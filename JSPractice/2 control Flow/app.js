@@ -127,3 +127,8 @@ console.log(clone);
 
  let a, b 
  [a, b] = f()
+
+ function person(firstName, lastName, ...hobbies) {
+   console.log(firstName, lastName, hobbies);
+ }
+ person('john', 'doe', 'reading', 'coding', 'gaming');
