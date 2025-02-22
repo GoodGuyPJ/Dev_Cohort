@@ -132,3 +132,7 @@ console.log(clone);
    console.log(firstName, lastName, hobbies);
  }
  person('john', 'doe', 'reading', 'coding', 'gaming');
+
+//  complete learing
+
+typeof person;
