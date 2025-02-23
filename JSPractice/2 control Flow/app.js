@@ -136,3 +136,32 @@ console.log(clone);
 //  complete learing
 
 typeof person;
+
+const data =  {
+  user: {
+    id: 123,
+    name: "john",
+    age: 25,
+    email: "john.doe@example.com",
+    address: {
+      street: "123 main st",
+      city: "New York"
+    } 
+  }
+}
+
+let list = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+for(let index in list){
+  console.log(`${index}: ${list[index]}`);
+}
+
+const colors = ["red", "green", "blue", "yellow", "orange"];
+colors.forEach((color) => console.log(color));
+
+const words = ["apple", "banana", "cherry", "date", "elderberry", "fig"];
+
+const capWords = words.forEach((word, index, arr) =>{
+  arr[index] = word.toUpperCase() + word.substring(1);
+});
+
+console.log(words)
