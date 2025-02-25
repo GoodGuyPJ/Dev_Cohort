@@ -190,106 +190,150 @@
 // console.log(res);
 
 //every() method
-const peoples = ["john", "doei", "jane", "smit"];
+// const peoples = ["john", "doei", "jane", "smit"];
 
-const res1 = peoples.every((people) => people.length === 4);
-console.log(res1);
+// const res1 = peoples.every((people) => people.length === 4);
+// console.log(res1);
 
-//some() method
-const res2 = peoples.some((people) => people.length > 3);
-console.log(res2);
+// //some() method
+// const res2 = peoples.some((people) => people.length > 3);
+// console.log(res2);
 
-//Refactor -> use every and some helpers
-let products = [
-  { name: "Checkers", category: "Toys" },
-  { name: "Chess", category: "Books" },
-  { name: "Bike", category: "Vehicle" },
-  { name: "Car", category: "Vehicle" },
-];
+// //Refactor -> use every and some helpers
+// let products = [
+//   { name: "Checkers", category: "Toys" },
+//   { name: "Chess", category: "Books" },
+//   { name: "Bike", category: "Vehicle" },
+//   { name: "Car", category: "Vehicle" },
+// ];
 
-let allProductsBooks = true;
-let someProductsBooks = false;
+// let allProductsBooks = true;
+// let someProductsBooks = false;
 
-for (let i = 0; i < products.length; i++) {
-  if (products[i].category !== "Books") {
-    allProductsBooks = false;
-  } else {
-    someProductsBooks = true;
-  }
-}
+// for (let i = 0; i < products.length; i++) {
+//   if (products[i].category !== "Books") {
+//     allProductsBooks = false;
+//   } else {
+//     someProductsBooks = true;
+//   }
+// }
 
-//do all products have a category of books?
-// let allProductsBooks = products.every((product) => product.category === "Books");
+// //do all products have a category of books?
+// // let allProductsBooks = products.every((product) => product.category === "Books");
 
-console.log(allProductsBooks);
-console.log(someProductsBooks);
+// console.log(allProductsBooks);
+// console.log(someProductsBooks);
 
-//do some products have a category of books?
-// let someProductsBooks = products.some((product) => product.category === "Books");
+// //do some products have a category of books?
+// // let someProductsBooks = products.some((product) => product.category === "Books");
 
-// reduce() method
-const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-// const sum = numbers.reduce((acc, num) => acc+num, 0);
-const sum = numbers.reduce((acc, num) => {
-  console.log(acc, num);
-  return acc + num;
-}, 0);
-console.log(sum);
+// // reduce() method
+// const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// // const sum = numbers.reduce((acc, num) => acc+num, 0);
+// const sum = numbers.reduce((acc, num) => {
+//   console.log(acc, num);
+//   return acc + num;
+// }, 0);
+// console.log(sum);
 
-const peoples1 = [
-  {
-    name: "john",
-    age: 25,
-  },
-  {
-    name: "doe",
-    age: 30,
-  },
-  {
-    name: "jane",
-    age: 35,
-  },
-  {
-    name: "smith",
-    age: 40,
-  },
-];
+// const peoples1 = [
+//   {
+//     name: "john",
+//     age: 25,
+//   },
+//   {
+//     name: "doe",
+//     age: 30,
+//   },
+//   {
+//     name: "jane",
+//     age: 35,
+//   },
+//   {
+//     name: "smith",
+//     age: 40,
+//   },
+// ];
 
-const res = peoples1.reduce(
-  (acc, people) => (people.age > acc ? people.age : acc),
-  0
-);
-console.log(res);
+// const res = peoples1.reduce(
+//   (acc, people) => (people.age > acc ? people.age : acc),
+//   0
+// );
+// console.log(res);
 
-const fruit = ["apple", "banana", "cherry", "date", "elderberry", "fig"];
+// const fruit = ["apple", "banana", "cherry", "date", "elderberry", "fig"];
 
-const wordFrequency = fruit.reduce((frequencyMap, word) => {
-  frequencyMap[word] = (frequencyMap[word] || 0) + 1;
-  return frequencyMap;
-});
-console.log(wordFrequency);
+// const wordFrequency = fruit.reduce((frequencyMap, word) => {
+//   frequencyMap[word] = (frequencyMap[word] || 0) + 1;
+//   return frequencyMap;
+// });
+// console.log(wordFrequency);
 
-const numbers1 = [1, 2, 3, 4];
+// const numbers1 = [1, 2, 3, 4];
 
-const calculateProduct = (numbers) => {
-  return numbers.reduce((acc, num) => acc * num, 1);
-};
+// const calculateProduct = (numbers) => {
+//   return numbers.reduce((acc, num) => acc * num, 1);
+// };
 
-const product = calculateProduct(numbers1);
-console.log(product);
+// const product = calculateProduct(numbers1);
+// console.log(product);
 
-//Map() method
-const map = new Map();
+// //Map() method
+// const map = new Map();
 
-const keyOne = "string";
-const keyTwo = {};
-const keyThree = function () {};
+// const keyOne = "string";
+// const keyTwo = {};
+// const keyThree = function () {};
 
-map.set(keyOne, "value associated with string");
-map.set(keyTwo, "value associated with object");
-map.set(keyThree, "value associated with function");
-console.log(map);
+// map.set(keyOne, "value associated with string");
+// map.set(keyTwo, "value associated with object");
+// map.set(keyThree, "value associated with function");
+// console.log(map);
 
-console.log(map.keys());
-console.log(map.values());
-console.log(map.delete(keyThree));
+// console.log(map.keys());
+// console.log(map.values());
+// console.log(map.delete(keyThree));
+
+// // set
+// const initialValue = [1, 2, 3, 4, 3, 8, 9];
+// const mySet = new Set(initialValue);
+// console.log(mySet);
+
+// const set = new Set();
+// set.add("apple");
+// set.add("banana");
+
+// console.log(set.has("apple"));
+// set.delete("apple");
+// console.log(set.has("apple"));
+// mySet.clear();
+// console.log(mySet);
+
+// for(let item of mySet) {
+//   console.log(item);
+// }
+
+const mySymbol = Symbol();
+console.log(typeof mySymbol);
+
+// comparing Symbols
+const symbol1 = Symbol("symbol");
+const symbol2 = Symbol("symbol");
+
+const obj = {};
+obj[symbol1] = "value 1";
+obj[symbol2] = "value 2";
+
+console.log(obj[symbol1]);
+console.log(obj[symbol2]);
+
+const huxn = {};
+huxn.age = 19;
+huxn["gender"] = "male";
+huxn["gender"] = "female";
+huxn[symbol1] = "alex";
+huxn[symbol2] = "john";
+console.log(huxn);
+
+
+//Dom manipulation
