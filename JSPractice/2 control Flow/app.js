@@ -345,12 +345,78 @@
 // const idname = document.getElementById("blue");
 // console.log(idname);
 
-const query = document.querySelector(".yellow");
-console.log(query);
+// const query = document.querySelector(".yellow");
+// console.log(query);
 
-const queryAll = document.querySelectorAll(".yellow");
-console.log(queryAll);
+// const queryAll = document.querySelectorAll(".yellow");
+// console.log(queryAll);
 
-//innerText, textContent, innerHTML
-const text = document.getElementById("text");
-console.log(text.innerText);
+// //innerText, textContent, innerHTML
+// const text = document.getElementById("text");
+// console.log(text.innerText);
+
+// const h1 = document.querySelector("h1");
+// h1.innerText = "Hello World";
+// h1.innerHTML = "<em>Hello World</em>";
+
+// const first = document.querySelector(".box");
+// console.log(first.textContent);
+
+// const h2 = document.querySelector("h2");
+// console.log(h2.classList);
+
+// h2.classList.add("green");
+// console.log(h2.classList);
+
+// h2.classList.remove("green");
+// console.log(h2.classList);
+
+// h2.classList.toggle("green");
+
+// const a = document.querySelector("a");
+// console.log(a.getAttribute("href"));
+// a.setAttribute("href", "https://www.google.com");
+// console.log(a.getAttribute("href"));
+
+// const input = document.querySelector("input");
+// console.log(input.value);
+// input.value = "";
+// console.log(input.value);
+
+// const h1 = document.createElement("h1");
+// const body = document.body;
+// h1.textContent = "Hello";
+// h1.classList.add("greetings");
+// body.appendChild(h1);
+// console.log(h1);
+
+// const firstP = document.querySelector("p");
+// const i = document.createElement("i");
+// i.innerText = "This is italic text";
+// i.style.color = "red";
+// firstP.insertAdjacentElement("beforebegin", i);
+// firstP.insertAdjacentElement("beforeend", i);
+// firstP.insertAdjacentElement("afterbegin", i);
+// firstP.insertAdjacentElement("afterend", i);
+
+// let section = document.querySelector("section");
+// const i = document.createElement("i");
+// i.innerText = "This is italic text";
+// i.style.color = "red";
+
+// section.append(i);
+
+// section.prepend(i);
+
+// const newList = document.querySelector(".new-list");
+// newList.remove();
+
+const badway = document.querySelector(".second-btn");
+badway.onclick = function () {
+  console.log("bad way");
+};
+
+const goodway = document.querySelector(".best");
+goodway.addEventListener("click", () => {
+  console.log("good way");
+});
