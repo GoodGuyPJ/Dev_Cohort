@@ -313,27 +313,44 @@
 //   console.log(item);
 // }
 
-const mySymbol = Symbol();
-console.log(typeof mySymbol);
+// const mySymbol = Symbol();
+// console.log(typeof mySymbol);
 
-// comparing Symbols
-const symbol1 = Symbol("symbol");
-const symbol2 = Symbol("symbol");
+// // comparing Symbols
+// const symbol1 = Symbol("symbol");
+// const symbol2 = Symbol("symbol");
 
-const obj = {};
-obj[symbol1] = "value 1";
-obj[symbol2] = "value 2";
+// const obj = {};
+// obj[symbol1] = "value 1";
+// obj[symbol2] = "value 2";
 
-console.log(obj[symbol1]);
-console.log(obj[symbol2]);
+// console.log(obj[symbol1]);
+// console.log(obj[symbol2]);
 
-const huxn = {};
-huxn.age = 19;
-huxn["gender"] = "male";
-huxn["gender"] = "female";
-huxn[symbol1] = "alex";
-huxn[symbol2] = "john";
-console.log(huxn);
-
+// const huxn = {};
+// huxn.age = 19;
+// huxn["gender"] = "male";
+// huxn["gender"] = "female";
+// huxn[symbol1] = "alex";
+// huxn[symbol2] = "john";
+// console.log(huxn);
 
 //Dom manipulation
+// const tagname = document.getElementsByTagName("h4");
+// console.log(tagname);
+
+// const tagname1 = (document.getElementsByClassName("green").innerHTML = "Hello");
+// console.log(tagname1);
+
+// const idname = document.getElementById("blue");
+// console.log(idname);
+
+const query = document.querySelector(".yellow");
+console.log(query);
+
+const queryAll = document.querySelectorAll(".yellow");
+console.log(queryAll);
+
+//innerText, textContent, innerHTML
+const text = document.getElementById("text");
+console.log(text.innerText);
