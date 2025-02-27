@@ -411,12 +411,41 @@
 // const newList = document.querySelector(".new-list");
 // newList.remove();
 
-const badway = document.querySelector(".second-btn");
-badway.onclick = function () {
-  console.log("bad way");
-};
+// const badway = document.querySelector(".second-btn");
+// badway.onclick = function () {
+//   console.log("bad way");
+// };
 
-const goodway = document.querySelector(".best");
-goodway.addEventListener("click", () => {
-  console.log("good way");
+// const goodway = document.querySelector(".best");
+// goodway.addEventListener("click", () => {
+//   console.log("good way");
+// });
+
+// const form = document.querySelector("form");
+// const input = document.querySelector("input");
+
+// form.addEventListener("submit", (event) => {
+//   event.preventDefault();
+//   console.log("form submitted");
+//   console.log(event);
+//   console.log(input.value);
+// });
+
+//events mouse and keyboard events
+
+// const emoji = document.querySelector(".emoji");
+// const emojis = ["😀", "😁", "😂", "🤣", "😃", "😄", "😅", "😆", "😉", "😊"];
+
+// emoji.addEventListener("mouseover", () => {
+//   emoji.innerHTML = emojis[Math.floor((Math.random() * emojis.length) | 0)];
+// });
+
+const btns = document.querySelectorAll(".btn");
+const body = document.body;
+
+btns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    number = btn.value;
+    changeBackground(number);
+  });
 });
