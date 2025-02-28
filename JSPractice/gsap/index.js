@@ -157,3 +157,7 @@ class Dog extends Animal {
 const dog = new Dog("Buddy", "Golden Retriever");
 dog.makeSound();
 console.log(dog.name);
+
+
+// complete test for js learning path
+let do this 
